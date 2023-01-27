@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.FunctionalTests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.FunctionalTests", "Ordering.FunctionalTests\Ordering.FunctionalTests.csproj", "{E3B61AA0-C0FD-4648-B176-32A83B1D8590}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotAPIGateway", "OcelotAPIGateway\OcelotAPIGateway.csproj", "{A6AA0C3A-D5AE-4971-8B6D-D069174097C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{E3B61AA0-C0FD-4648-B176-32A83B1D8590}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3B61AA0-C0FD-4648-B176-32A83B1D8590}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3B61AA0-C0FD-4648-B176-32A83B1D8590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6AA0C3A-D5AE-4971-8B6D-D069174097C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6AA0C3A-D5AE-4971-8B6D-D069174097C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6AA0C3A-D5AE-4971-8B6D-D069174097C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6AA0C3A-D5AE-4971-8B6D-D069174097C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,6 +153,7 @@ Global
 		{7AA6CE4A-51CE-45DB-B4AD-56F91AA62DDA} = {23EF1B36-22DB-4137-B257-9BD75FB9EE34}
 		{4E42E30B-6EE9-44E2-9B94-7AD4FF5EC42E} = {67879409-9771-48CA-8B1C-3D057B746FB2}
 		{E3B61AA0-C0FD-4648-B176-32A83B1D8590} = {2EC8F036-C4CF-46FD-ACF3-3A2D4041092D}
+		{A6AA0C3A-D5AE-4971-8B6D-D069174097C7} = {B14AE4BD-CA7F-416D-AB03-E2876996B853}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {440CF6D8-65D9-4CE4-97C6-E8B8BD4BA09F}
