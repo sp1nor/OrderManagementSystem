@@ -2,15 +2,40 @@ version: '3.4'
 
 services:
 
-  portainer:
-    container_name: portainer
+  orderdb:
+    container_name: orderdb
+    environment:
+        SA_PASSWORD: "Wti$@#_V(D;"
+        ACCEPT_EULA: "Y"
     restart: always
     ports:
-      - "8080:8000"
-      - "9000:9000"
+        - "1433:1433"
+
+  basketdb:
+    container_name: basketdb
+    restart: always    
+    ports:
+        - "6379:6379"
+
+  customerdb:
+    container_name: customerdb
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin1234
+      - POSTGRES_DB=CustomerDb
+    restart: always
+    ports:
+        - "5432:5432"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data 
+      - postgres_data:/var/lib/postgresql/data/
+
+  catalogdb:
+    container_name: catalogdb
+    restart: always
+    ports:
+        - "27017:27017"
+    volumes:
+        - mongo_data:/data/db
 
   catalog.api:
     environment:
@@ -33,6 +58,8 @@ services:
   ordering.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - orderdb
     ports:
       - "8003:80"
 
@@ -42,7 +69,17 @@ services:
     depends_on:
       - catalog.api
       - basket.api
-      - consumer.api
+      - customer.api
       - ordering.api
     ports:
       - "8010:80"
+
+  portainer:
+    container_name: portainer
+    restart: always
+    ports:
+      - "8080:8000"
+      - "9000:9000"
+    volumes:
+      #- /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data

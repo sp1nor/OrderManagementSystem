@@ -2,17 +2,17 @@ version: '3.4'
 
 services:
 
-  catalogdb:
-    image: mongo
+  orderdb:
+    image: mcr.microsoft.com/mssql/server:2017-latest
 
   basketdb:
     image: redis:alpine
 
-  consumerdb:
+  customerdb:
     image: postgres
 
-  orderdb:
-    image: mcr.microsoft.com/mssql/server:2017-latest
+  catalogdb:
+    image: mongo
 
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
@@ -44,3 +44,10 @@ services:
       context: .
       dockerfile: OcelotAPIGateway/Dockerfile
 
+  portainer:
+    image: portainer/portainer-ce
+
+volumes:
+  postgres_data:
+  mongo_data:
+  portainer_data:
