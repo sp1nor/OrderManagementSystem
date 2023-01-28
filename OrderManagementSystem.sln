@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMVC", "WebMVC\WebMVC.csproj", "{2885425E-9145-4F6F-9390-C7130EA66517}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMVC", "WebMVC\WebMVC.csproj", "{2885425E-9145-4F6F-9390-C7130EA66517}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D8F70D96-C8D6-4395-B1E8-0453E9786BE2}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{97862C30-A556-4BCA-9FCA-B6DE10DEC6CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Catalog.API\Catalog.API.csproj", "{418C545D-769C-4BE3-B907-CAF6267EAB5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Catalog.API\Catalog.API.csproj", "{418C545D-769C-4BE3-B907-CAF6267EAB5E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{23EF1B36-22DB-4137-B257-9BD75FB9EE34}"
 EndProject
@@ -25,41 +25,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{07E9FD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customer", "Customer", "{67879409-9771-48CA-8B1C-3D057B746FB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "Basket.API\Basket.API.csproj", "{FC791CF7-5FAA-46D0-8D62-56EF186B216C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API", "Basket.API\Basket.API.csproj", "{FC791CF7-5FAA-46D0-8D62-56EF186B216C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common.Logging", "Common.Logging", "{7760D36A-A564-4C8F-8782-A3DC684FB027}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus.Messages", "EventBus.Messages", "{95E816AF-61FC-4E5A-B8AE-CB1454AE513D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.API", "Ordering.API\Ordering.API.csproj", "{678CD993-D285-4F55-B084-D00A890D5024}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.API", "Ordering.API\Ordering.API.csproj", "{678CD993-D285-4F55-B084-D00A890D5024}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.API", "Customer.API\Customer.API.csproj", "{3524A6B9-C365-402F-A0AF-10B7A11C37AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.API", "Customer.API\Customer.API.csproj", "{3524A6B9-C365-402F-A0AF-10B7A11C37AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.UnitTests", "Catalog.UnitTests\Catalog.UnitTests.csproj", "{B6F80C5D-B4E0-4A52-A4D8-FDDD2678F2E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.UnitTests", "Catalog.UnitTests\Catalog.UnitTests.csproj", "{B6F80C5D-B4E0-4A52-A4D8-FDDD2678F2E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.UnitTests", "Basket.UnitTests\Basket.UnitTests.csproj", "{7B405156-F878-4423-9664-A17589C3ADF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.UnitTests", "Basket.UnitTests\Basket.UnitTests.csproj", "{7B405156-F878-4423-9664-A17589C3ADF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.UnitTests", "Customer.UnitTests\Customer.UnitTests.csproj", "{904EE884-4094-4299-AC51-C369F8F2C506}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.UnitTests", "Customer.UnitTests\Customer.UnitTests.csproj", "{904EE884-4094-4299-AC51-C369F8F2C506}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.UnitTests", "Ordering.UnitTests\Ordering.UnitTests.csproj", "{E248408D-BD38-406B-A05F-C488485D551A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.UnitTests", "Ordering.UnitTests\Ordering.UnitTests.csproj", "{E248408D-BD38-406B-A05F-C488485D551A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.ArchitectureTests", "Ordering.ArchitectureTests\Ordering.ArchitectureTests.csproj", "{B0A1A3CE-44A5-40A3-AFC6-E26047D47103}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.ArchitectureTests", "Ordering.ArchitectureTests\Ordering.ArchitectureTests.csproj", "{B0A1A3CE-44A5-40A3-AFC6-E26047D47103}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2EC8F036-C4CF-46FD-ACF3-3A2D4041092D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.FunctionalTests", "Basket.FunctionalTests\Basket.FunctionalTests.csproj", "{A817961B-8766-40D6-900A-41F80080A1C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.FunctionalTests", "Basket.FunctionalTests\Basket.FunctionalTests.csproj", "{A817961B-8766-40D6-900A-41F80080A1C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.FunctionalTests", "Catalog.FunctionalTests\Catalog.FunctionalTests.csproj", "{7AA6CE4A-51CE-45DB-B4AD-56F91AA62DDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.FunctionalTests", "Catalog.FunctionalTests\Catalog.FunctionalTests.csproj", "{7AA6CE4A-51CE-45DB-B4AD-56F91AA62DDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.FunctionalTests", "Customer.FunctionalTests\Customer.FunctionalTests.csproj", "{4E42E30B-6EE9-44E2-9B94-7AD4FF5EC42E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.FunctionalTests", "Customer.FunctionalTests\Customer.FunctionalTests.csproj", "{4E42E30B-6EE9-44E2-9B94-7AD4FF5EC42E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.FunctionalTests", "Ordering.FunctionalTests\Ordering.FunctionalTests.csproj", "{E3B61AA0-C0FD-4648-B176-32A83B1D8590}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.FunctionalTests", "Ordering.FunctionalTests\Ordering.FunctionalTests.csproj", "{E3B61AA0-C0FD-4648-B176-32A83B1D8590}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotAPIGateway", "OcelotAPIGateway\OcelotAPIGateway.csproj", "{A6AA0C3A-D5AE-4971-8B6D-D069174097C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotAPIGateway", "OcelotAPIGateway\OcelotAPIGateway.csproj", "{A6AA0C3A-D5AE-4971-8B6D-D069174097C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Logging", "Common.Logging\Common.Logging.csproj", "{302909F0-267E-4EBE-B5F0-9CB0D9E5038D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Logging", "Common.Logging\Common.Logging.csproj", "{302909F0-267E-4EBE-B5F0-9CB0D9E5038D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.Messages", "EventBus.Messages\EventBus.Messages.csproj", "{5D03A152-1C14-494C-A4FD-5462496DF602}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.Messages", "EventBus.Messages\EventBus.Messages.csproj", "{5D03A152-1C14-494C-A4FD-5462496DF602}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C43F0370-80A0-4C6B-AD5A-D5CABC6179A0}"
 EndProject
@@ -67,11 +67,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{33549B09-4D5F-4FDA-A850-74B0E6A823CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Domain", "Ordering.Domain\Ordering.Domain.csproj", "{346A67FB-27A2-434D-9E71-1FC3EAF557B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Domain", "Ordering.Domain\Ordering.Domain.csproj", "{346A67FB-27A2-434D-9E71-1FC3EAF557B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Application", "Ordering.Application\Ordering.Application.csproj", "{8C2E402C-B8D3-4B7D-81CE-63FBC15F6E71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Application", "Ordering.Application\Ordering.Application.csproj", "{8C2E402C-B8D3-4B7D-81CE-63FBC15F6E71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Persistence", "Ordering.Persistence\Ordering.Persistence.csproj", "{70F1926E-BA49-4189-8C3E-7B0E29B5DDE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Persistence", "Ordering.Persistence\Ordering.Persistence.csproj", "{70F1926E-BA49-4189-8C3E-7B0E29B5DDE0}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{34DD43C1-899C-4A2B-B5E0-84DE3E50A562}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +161,10 @@ Global
 		{70F1926E-BA49-4189-8C3E-7B0E29B5DDE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70F1926E-BA49-4189-8C3E-7B0E29B5DDE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70F1926E-BA49-4189-8C3E-7B0E29B5DDE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34DD43C1-899C-4A2B-B5E0-84DE3E50A562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34DD43C1-899C-4A2B-B5E0-84DE3E50A562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34DD43C1-899C-4A2B-B5E0-84DE3E50A562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34DD43C1-899C-4A2B-B5E0-84DE3E50A562}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
