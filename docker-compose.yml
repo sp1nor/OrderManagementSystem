@@ -25,7 +25,6 @@ services:
       context: .
       dockerfile: Ordering.API/Dockerfile
 
-
   ocelotapigateway:
     image: ${DOCKER_REGISTRY-}ocelotapigateway
     build:
