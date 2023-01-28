@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ordering.Application.Features.OrderFeature.Commands.CreateOrder
+namespace Ordering.Application.Features.OrderFeature.Commands.CreateOrder;
+
+public class CreateOrderCommand
 {
-    internal class CreateOrderCommand
-    {
-    }
 }

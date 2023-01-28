@@ -1,4 +1,4 @@
-﻿using Ordering.Domain.OrderAggregate;
+﻿using Ordering.Domain.AggregatesModel.OrderAggregate;
 
 namespace Ordering.Application.Common.Persistence
 {

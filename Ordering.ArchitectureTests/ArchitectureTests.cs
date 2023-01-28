@@ -1,5 +1,5 @@
 ﻿using NetArchTest.Rules;
-using Ordering.Domain.OrderAggregate;
+using Ordering.Domain.AggregatesModel.OrderAggregate;
 using System.Reflection;
 using Xunit;
 

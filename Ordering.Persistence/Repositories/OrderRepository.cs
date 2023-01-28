@@ -1,43 +1,59 @@
-﻿using Ordering.Application.Common.Persistence;
-using Ordering.Domain.OrderAggregate;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using Ordering.Application.Common.Persistence;
+using Ordering.Domain.AggregatesModel.OrderAggregate;
 
-namespace Ordering.Persistence.Repositories
+namespace Ordering.Persistence.Repositories;
+
+public class OrderRepository : IOrderRepository
 {
-    public class OrderRepository : IOrderRepository
+    private ApplicationContext _context;
+
+    public OrderRepository(ApplicationContext context)
     {
-        public void Create(Order item)
-        {
-            throw new NotImplementedException();
-        }
+        _context = context;
+    }
 
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
+    public void Save()
+    {
+        _context.SaveChanges();
+    }
 
-        public void Delete(Order item)
-        {
-            throw new NotImplementedException();
-        }
+    public void Create(Order item)
+    {
+        _context.Add(item);
+        Save();
+    }
 
-        public IEnumerable<Order> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+    public void Delete(int id)
+    {
+        var order = _context.Orders.FirstOrDefault(p => p.Id == id);
 
-        public Order GetItemById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        _context.Orders.Remove(order);
+        Save();
+    }
 
-        public void Update(Order item)
-        {
-            throw new NotImplementedException();
-        }
+    public void Delete(Order item)
+    {
+        _context.Orders.Remove(item);
+        Save();
+    }
+
+    public IEnumerable<Order> GetAll()
+    {
+        return _context.Orders.ToList();
+    }
+
+    public Order GetItemById(int id)
+    {
+        var order = _context.Orders.FirstOrDefault(p => p.Id == id);
+
+        return order;
+    }
+
+    public void Update(Order item)
+    {
+        var order = _context.Orders.FirstOrDefault(p => p.Id == item.Id);
+        order.Date = item.Date;
+        Save();
     }
 }
