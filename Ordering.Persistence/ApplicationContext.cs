@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Ordering.Domain.OrderAggregate;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ordering.Persistence
 {
@@ -13,6 +8,7 @@ namespace Ordering.Persistence
         public DbSet<Order> Orders { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
+            : base(options)
         {
             Database.EnsureCreated();
         }
