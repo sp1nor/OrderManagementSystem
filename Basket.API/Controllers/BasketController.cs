@@ -9,7 +9,7 @@ using EventBus.Messages.Events;
 namespace Basket.API.Controllers;
 
 [ApiController]
-[Route("api/v1/[controller]")]
+[Route("api/[controller]")]
 public class BasketController : ControllerBase
 {
     private readonly IBasketRepository _repository;
@@ -32,10 +32,10 @@ public class BasketController : ControllerBase
     }
 
     [HttpPost]
-    [ProducesResponseType(typeof(Cart), (int)HttpStatusCode.OK)]
-    public async Task<ActionResult<Cart>> UpdateBasket([FromBody]Cart basket)
+    public async Task<ActionResult<Cart>> UpdateBasket(Cart basket)
     {
-        return Ok(await _repository.UpdateBasket(basket));
+        var cart = await _repository.UpdateBasket(basket);
+        return Ok(cart);
     }
 
     [HttpDelete("{userName}", Name = "DeleteBasket")]
@@ -46,6 +46,7 @@ public class BasketController : ControllerBase
         return Ok();
     }
 
+    [Route("[action]")]
     [HttpPost]
     [ProducesResponseType((int)HttpStatusCode.Accepted)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
