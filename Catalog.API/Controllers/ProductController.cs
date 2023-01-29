@@ -23,6 +23,7 @@ public class ProductController : ControllerBase
     {
         var products = _repository.GetAll();
         _logger.LogInformation("Get product form repository successfully.", products);
+
         return Ok(products);
     }
 

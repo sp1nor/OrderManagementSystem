@@ -47,6 +47,8 @@ services:
   catalog.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+      - "SeqConfiguration:Uri=http://seq:5341"
     ports:
       - "8000:80"
 
@@ -81,6 +83,35 @@ services:
     ports:
       - "8010:80"
 
+  seq:
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - "5341:80"
+    volumes:
+      - seq-data:/data
+
+  elasticsearch:
+    container_name: elasticsearch
+    environment:
+        - xpack.monitoring.enabled=true
+        - xpack.watcher.enabled=false
+        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+        - discovery.type=single-node
+    ports:
+        - "9200:9200"
+    volumes:
+        - elasticsearch-data:/usr/share/elasticsearch/data   
+
+  kibana:
+    container_name: kibana
+    environment:        
+        - ELASTICSEARCH_URL=http://elasticsearch:9200
+    depends_on:
+        - elasticsearch
+    ports:
+        - "5601:5601" 
+
   portainer:
     container_name: portainer
     restart: always
@@ -88,5 +119,4 @@ services:
       - "8080:8000"
       - "9000:9000"
     volumes:
-      #- /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data

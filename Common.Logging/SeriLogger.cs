@@ -11,12 +11,14 @@ public static class SeriLogger
        (context, configuration) =>
        {
            var elasticUri = context.Configuration.GetValue<string>("ElasticConfiguration:Uri");
+           var seqUri = context.Configuration.GetValue<string>("SeqConfiguration:Uri");
 
            configuration
                 .Enrich.FromLogContext()
                 .Enrich.WithMachineName()
                 .WriteTo.Debug()
                 .WriteTo.Console()
+                .WriteTo.Seq(seqUri)
                 .WriteTo.Elasticsearch(
                     new ElasticsearchSinkOptions(new Uri(elasticUri))
                     {

@@ -10,3 +10,11 @@ system requirements
 ## Run
 
 docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
+## ElasticSerach & kibana
+indexformat 
+
+applogs-*
+
+applogs-catalog-api-development-2023-01
+applogs-order-api-development-2023-01

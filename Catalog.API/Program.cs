@@ -1,8 +1,13 @@
+using Common.Logging;
+
 using Catalog.API.Persistence;
 using Catalog.API.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog(SeriLogger.Configure);
 
 builder.Services.AddDbContext<ApplicationContext>(opt => opt.UseInMemoryDatabase("InMem"));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();

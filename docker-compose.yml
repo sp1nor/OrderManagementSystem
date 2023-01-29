@@ -47,10 +47,21 @@ services:
       context: .
       dockerfile: OcelotAPIGateway/Dockerfile
 
+  seq:
+    image: datalust/seq:latest
+
+  elasticsearch:
+    image: elasticsearch:7.9.2
+
+  kibana:
+    image: kibana:7.9.2
+
   portainer:
     image: portainer/portainer-ce
 
 volumes:
   postgres_data:
   mongo_data:
+  elasticsearch-data:
+  seq-data:
   portainer_data:
