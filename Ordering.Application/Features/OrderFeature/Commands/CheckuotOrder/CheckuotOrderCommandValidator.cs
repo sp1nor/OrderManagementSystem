@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Ordering.Application.Features.OrderFeature.Commands.CreateOrder;
+using Ordering.Application.Features.OrderFeature.Commands.CheckoutOrder;
 
 namespace Ordering.Application.Features.OrderFeature.Commands.CheckuotOrder
 {

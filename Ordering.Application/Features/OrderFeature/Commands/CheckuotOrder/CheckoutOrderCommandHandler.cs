@@ -2,7 +2,7 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Ordering.Application.Common.Persistence;
-using Ordering.Application.Features.OrderFeature.Commands.CreateOrder;
+using Ordering.Application.Features.OrderFeature.Commands.CheckoutOrder;
 using Ordering.Domain.AggregatesModel.OrderAggregate;
 
 namespace Ordering.Application.Features.OrderFeature.Commands.CheckuotOrder

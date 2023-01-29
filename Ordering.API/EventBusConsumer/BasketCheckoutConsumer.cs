@@ -2,11 +2,11 @@
 using EventBus.Messages.Events;
 using MassTransit;
 using MediatR;
-using Ordering.Application.Features.OrderFeature.Commands.CreateOrder;
+using Ordering.Application.Features.OrderFeature.Commands.CheckoutOrder;
 
 namespace Ordering.API.EventBusConsumer;
 
-public class BasketCheckoutConsumer
+public class BasketCheckoutConsumer : IConsumer<BasketCheckoutEvent>
 {
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;

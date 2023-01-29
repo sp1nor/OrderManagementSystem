@@ -1,10 +1,13 @@
 using Common.Logging;
 using EventBus.Messages.Common;
 using MassTransit;
+using Ordering.API.EventBusConsumer;
 using Ordering.Application;
 using Ordering.Application.Common.Settings;
 using Ordering.Persistence;
 using Serilog;
+using GreenPipes;
+using Microsoft.AspNetCore.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,19 +22,20 @@ builder.Services.AddPersistence(builder.Configuration);
 // MassTransit-RabbitMQ Configuration
 builder.Services.AddMassTransit(config => {
 
-    config.AddConsumer<SaleConsumer>();
+    config.AddConsumer<BasketCheckoutConsumer>();
 
     config.UsingRabbitMq((ctx, cfg) => {
         cfg.Host(builder.Configuration["EventBusSettings:HostAddress"]);
         cfg.UseHealthCheck(ctx);
 
         cfg.ReceiveEndpoint(EventBusConstants.BasketCheckoutQueue, c => {
-        cfg.ReceiveEndpoint("saleQueue", c => {
-            c.ConfigureConsumer<SaleConsumer>(ctx);
+            c.ConfigureConsumer<BasketCheckoutConsumer>(ctx);
         });
     });
 });
 builder.Services.AddMassTransitHostedService();
+
+builder.Services.AddScoped<BasketCheckoutConsumer>();
 
 builder.Services.AddControllers();
 

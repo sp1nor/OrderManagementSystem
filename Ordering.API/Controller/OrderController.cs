@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-using Ordering.Application.Features.OrderFeature.Commands.CreateOrder;
+using Ordering.Application.Features.OrderFeature.Commands.CheckoutOrder;
 using Ordering.Application.Features.OrderFeature.Queries.GetAllOrders;
 
 namespace Ordering.API.Controller;
