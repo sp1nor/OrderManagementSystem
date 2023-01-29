@@ -1,6 +1,7 @@
 using Basket.API.Entities;
 using Basket.API.Persistence.Repositories;
 using Common.Logging;
+using MassTransit;
 using Microsoft.AspNetCore.Hosting;
 using Serilog;
 using System.Reflection;
@@ -17,6 +18,17 @@ builder.Services.AddStackExchangeRedisCache(opt =>
 
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+// MassTransit-RabbitMQ Configuration
+builder.Services.AddMassTransit(config => {
+    config.UsingRabbitMq((ctx, cfg) => {
+        cfg.Host(builder.Configuration["EventBusSettings:HostAddress"]);
+        cfg.UseHealthCheck(ctx);
+    });
+});
+builder.Services.AddMassTransitHostedService();
+
+builder.Services.AddControllers();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
