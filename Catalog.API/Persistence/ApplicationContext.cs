@@ -11,6 +11,7 @@ namespace Catalog.API.Persistence
            : base(options)
         {
             CatalogContextSeed.SeedData(Products);
+            this.SaveChanges();
         }
     }
 }

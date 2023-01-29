@@ -1,5 +1,5 @@
 ﻿using NetArchTest.Rules;
-using Ordering.Domain.OrderAggregate;
+using Ordering.Domain.AggregatesModel.OrderAggregate;
 using System.Reflection;
 using Xunit;
 
@@ -7,10 +7,10 @@ namespace Ordering.ArchitectureTests
 {
     public class ArchitectureTests
     {
-        private const string DomainNamespace = "OrderBook.Domain";
-        private const string ApplicationNamespace = "OrderBook.Application";
-        private const string PersistanceNamespace = "OrderBook.Persistence";
-        private const string PresentationNamespace = "OrderBook.Presentation";
+        private const string DomainNamespace = "Ordering.Domain";
+        private const string ApplicationNamespace = "Ordering.Application";
+        private const string PersistanceNamespace = "Ordering.Persistence";
+        private const string PresentationNamespace = "Ordering.Presentation";
 
         [Fact]
         public void Domain_Should_Not_HaveDependencyOnOtherProjects()

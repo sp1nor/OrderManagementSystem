@@ -7,9 +7,9 @@ namespace Catalog.API.Persistence
     {
         public static void SeedData(DbSet<Product> Products)
         {
-            bool isExistProduct = Products.ToList().Count == 0;
+            bool isProductsEmpty = Products.ToList().Count == 0;
 
-            if (!isExistProduct)
+            if (isProductsEmpty)
             {
                 Products.AddRangeAsync(GetPreconfiguredProducts());
             }

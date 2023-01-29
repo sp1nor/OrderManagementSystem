@@ -1,0 +1,67 @@
+version: '3.4'
+
+services:
+
+  orderdb:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+
+  basketdb:
+    image: redis:alpine
+
+  customerdb:
+    image: postgres
+
+  catalogdb:
+    image: mongo
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+
+  catalog.api:
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: .
+      dockerfile: Catalog.API/Dockerfile
+
+  basket.api:
+    image: ${DOCKER_REGISTRY-}basketapi
+    build:
+      context: .
+      dockerfile: Basket.API/Dockerfile
+
+  customer.api:
+    image: ${DOCKER_REGISTRY-}customerapi
+    build:
+      context: .
+      dockerfile: Customer.API/Dockerfile
+
+  ordering.api:
+    image: ${DOCKER_REGISTRY-}orderingapi
+    build:
+      context: .
+      dockerfile: Ordering.API/Dockerfile
+
+  ocelotapigateway:
+    image: ${DOCKER_REGISTRY-}ocelotapigateway
+    build:
+      context: .
+      dockerfile: OcelotAPIGateway/Dockerfile
+
+  seq:
+    image: datalust/seq:latest
+
+  elasticsearch:
+    image: elasticsearch:7.9.2
+
+  kibana:
+    image: kibana:7.9.2
+
+  portainer:
+    image: portainer/portainer-ce
+
+volumes:
+  postgres_data:
+  mongo_data:
+  elasticsearch-data:
+  seq-data:
+  portainer_data:

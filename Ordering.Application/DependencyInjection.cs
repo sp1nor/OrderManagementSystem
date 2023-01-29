@@ -7,7 +7,7 @@ using Ordering.Application.Common.Behaviors;
 
 namespace Ordering.Application
 {
-    public static class DepenndencyInjection
+    public static class DependencyInjection
     {
         public static void AddApplication(this IServiceCollection service)
         {

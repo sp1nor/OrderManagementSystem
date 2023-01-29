@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using Ordering.Application.Common.Interfaces;
+using Ordering.Domain.AggregatesModel.OrderAggregate;
 
-namespace Ordering.Application.Features.OrderFeature.Queries.GetAllOrders
+namespace Ordering.Application.Features.OrderFeature.Queries.GetAllOrders;
+
+public class GetAllOrdersQuery : IRequest<IEnumerable<Order>>, ICacheableMediatrQuery
 {
-    internal class GetAllOrdersQuery
-    {
-    }
+    public IEnumerable<Order> Orders { get; set; }
+
+    public bool BypassCache { get; set; }
+    public string CacheKey => $"Orders";
+    public TimeSpan? SlidingExpiration { get; set; }
 }
