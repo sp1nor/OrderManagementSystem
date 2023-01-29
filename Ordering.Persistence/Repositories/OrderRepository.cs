@@ -56,4 +56,11 @@ public class OrderRepository : IOrderRepository
         order.Date = item.Date;
         Save();
     }
+
+    public async Task<Order> CreateAsync(Order entity)
+    {
+        _context.Set<Order>().Add(entity);
+        await _context.SaveChangesAsync();
+        return entity;
+    }
 }

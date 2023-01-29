@@ -7,6 +7,7 @@ namespace Ordering.Application.Common.Persistence
         IEnumerable<Order> GetAll();
         Order GetItemById(int id);
         void Create(Order item);
+        Task<Order> CreateAsync(Order entity);
 
         void Update(Order item);
         void Delete(int id);
