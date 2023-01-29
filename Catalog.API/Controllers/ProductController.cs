@@ -1,6 +1,7 @@
 ﻿using Catalog.API.Entities;
 using Catalog.API.Persistence.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace Catalog.API.Controllers;
 
@@ -19,10 +20,12 @@ public class ProductController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
+    public async Task<ActionResult<IEnumerable<Product>>> GetAll()
     {
         var products = _repository.GetAll();
         _logger.LogInformation("Get product form repository successfully.", products);
+
         return Ok(products);
     }
 

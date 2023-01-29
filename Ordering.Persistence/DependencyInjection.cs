@@ -1,28 +1,25 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Ordering.Application.Common.Persistence;
 using Ordering.Persistence.Repositories;
 
-namespace Ordering.Persistence
+namespace Ordering.Persistence;
+
+public static class DependencyInjection
 {
-    public static class DependencyInjection
+    public static IServiceCollection AddPersistence(
+        this IServiceCollection service, 
+        IConfiguration configuration)
     {
-        public static IServiceCollection AddPersistence(
-            this IServiceCollection service, 
-            IConfiguration configuration)
-        {
-            //for Development
-            service.AddDbContext<ApplicationContext>(opt => opt.UseInMemoryDatabase("InMem"));
+        //for Development
+        service.AddDbContext<ApplicationContext>(opt => opt.UseInMemoryDatabase("InMem"));
 
-            //service.AddDbContext<ApplicationContext>(options =>
-            //        options.UseSqlServer(configuration.GetConnectionString("OrderingConnectionString")));
+        //service.AddDbContext<ApplicationContext>(options =>
+        //        options.UseSqlServer(configuration.GetConnectionString("OrderingConnectionString")));
 
-            service.AddTransient<IOrderRepository, OrderRepository>();
+        service.AddTransient<IOrderRepository, OrderRepository>();
 
-            return service;
-        }
+        return service;
     }
 }
