@@ -1,8 +1,12 @@
+using Common.Logging;
 using Ordering.Application;
 using Ordering.Application.Common.Settings;
 using Ordering.Persistence;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog(SeriLogger.Configure);
 
 // Add services to the container.
 builder.Services.Configure<CacheSettings>(builder.Configuration.GetSection("CacheSettings"));

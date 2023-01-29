@@ -55,18 +55,24 @@ services:
   basket.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+      - "SeqConfiguration:Uri=http://seq:5341"
     ports:
       - "8001:80"
 
   customer.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+      - "SeqConfiguration:Uri=http://seq:5341"
     ports:
       - "8002:80"
 
   ordering.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+      - "SeqConfiguration:Uri=http://seq:5341"
     depends_on:
       - orderdb
     ports:
