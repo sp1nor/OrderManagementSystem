@@ -1,3 +1,33 @@
+## Architecture
+
+Microservices with clean architecture for order management system
+
+## Catalog microservice which includes;
+ASP.NET Core Web API application
+REST API principles, CRUD operations
+
+## Ordering Microservice
+Implementing DDD, CQRS, and Clean Architecture
+
+## Libs
+
+Microsoft.Extensions.DependencyInjection.Abstractions, MediatR, Automapper, FluentValidation, MassTransit, Newtonsoft.Json, swashbuckle 
+
+EntityFrameworkCore in Memory for development and EntityFrameworkCore.SqlServer for prod
+
+RabbitMQ Event Driven Communication
+
+## Logging
+Serilog
+
+## DB
+
+MS SQL server, redis,, Postgresql, mongodb
+
+## Tests
+xUnit (catalog unit tests),
+NetArchTest.Rules (ordering architecture tests)
+
 ## Installing
 Clone the repository
 
