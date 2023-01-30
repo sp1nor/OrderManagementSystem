@@ -21,7 +21,10 @@ public class BasketCheckoutConsumer : IConsumer<BasketCheckoutEvent>
 
     public async Task Consume(ConsumeContext<BasketCheckoutEvent> context)
     {
-        var command = _mapper.Map<CheckoutOrderCommand>(context.Message);
+        //var command = _mapper.Map<CheckoutOrderCommand, CheckoutOrderCommand>(context.Message);
+        var command = new CheckoutOrderCommand();
+        _mapper.Map<BasketCheckoutEvent, CheckoutOrderCommand>(context.Message, command);
+
         var result = await _mediator.Send(command);
 
         _logger.LogInformation("BasketCheckoutEvent consumed successfully. Created Order Id : {newOrderId}", result);
