@@ -19,7 +19,7 @@ namespace WebMVC.Services
 
         public async Task<IEnumerable<ProductModel>> GetCatalog()
         {
-            var response = await _client.GetAsync("/Catalog");
+            var response = await _client.GetAsync($"/gateway/product");
             return await response.ReadContentAs<List<ProductModel>>();
         }
     }

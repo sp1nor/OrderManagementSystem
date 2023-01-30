@@ -18,7 +18,7 @@ namespace WebMVC.Controllers
 
         public IActionResult Index()
         {
-            return View(_catalogService.GetCatalog());
+            return View(_catalogService.GetCatalog().Result);
         }
 
         public IActionResult Privacy()
