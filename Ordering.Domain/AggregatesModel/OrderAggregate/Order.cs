@@ -1,6 +1,9 @@
-﻿namespace Ordering.Domain.AggregatesModel.OrderAggregate;
+﻿using Ordering.Domain.AggregatesModel.OrderAggregate.ValueObjects;
+using Ordering.Domain.Common.Models;
 
-public class Order
+namespace Ordering.Domain.AggregatesModel.OrderAggregate;
+
+public class Order : AggregateRoot<OrderId>
 {
     public int Id { get; set; }
 
