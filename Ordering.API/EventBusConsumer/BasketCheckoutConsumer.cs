@@ -21,9 +21,16 @@ public class BasketCheckoutConsumer : IConsumer<BasketCheckoutEvent>
 
     public async Task Consume(ConsumeContext<BasketCheckoutEvent> context)
     {
-        //var command = _mapper.Map<CheckoutOrderCommand, CheckoutOrderCommand>(context.Message);
         var command = new CheckoutOrderCommand();
-        _mapper.Map<BasketCheckoutEvent, CheckoutOrderCommand>(context.Message, command);
+        command.UserName = context.Message.UserName;
+        command.TotalPrice = context.Message.TotalPrice;
+        command.AddressLine = context.Message.AddressLine;
+        command.EmailAddress = context.Message.EmailAddress;
+        command.Country = context.Message.Country;
+        command.State = context.Message.State;
+        command.FirstName = context.Message.FirstName;
+        command.LastName = context.Message.LastName;
+        command.ZipCode = context.Message.ZipCode;
 
         var result = await _mediator.Send(command);
 
