@@ -1,11 +1,7 @@
-﻿namespace Ordering.Domain.AggregatesModel.OrderAggregate;
+﻿namespace EventBus.Messages.Events;
 
-public class Order
+public class BasketCheckoutEvent : IntegrationBaseEvent
 {
-    public int Id { get; set; }
-
-    public DateTime Date { get; set; }
-
     public string UserName { get; set; }
     public decimal TotalPrice { get; set; }
 

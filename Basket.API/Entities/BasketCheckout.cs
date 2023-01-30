@@ -1,11 +1,7 @@
-﻿namespace Ordering.Domain.AggregatesModel.OrderAggregate;
+﻿namespace Basket.API.Entities;
 
-public class Order
+public class BasketCheckout
 {
-    public int Id { get; set; }
-
-    public DateTime Date { get; set; }
-
     public string UserName { get; set; }
     public decimal TotalPrice { get; set; }
 

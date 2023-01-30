@@ -1,11 +1,9 @@
-﻿namespace Ordering.Domain.AggregatesModel.OrderAggregate;
+﻿using MediatR;
 
-public class Order
+namespace Ordering.Application.Features.OrderFeature.Commands.CheckoutOrder;
+
+public class CheckoutOrderCommand : IRequest<int>
 {
-    public int Id { get; set; }
-
-    public DateTime Date { get; set; }
-
     public string UserName { get; set; }
     public decimal TotalPrice { get; set; }
 
