@@ -13,10 +13,10 @@ public static class DependencyInjection
         IConfiguration configuration)
     {
         //for Development
-        service.AddDbContext<ApplicationContext>(opt => opt.UseInMemoryDatabase("InMem"));
+        //service.AddDbContext<ApplicationContext>(opt => opt.UseInMemoryDatabase("InMem"));
 
-        //service.AddDbContext<ApplicationContext>(options =>
-        //        options.UseSqlServer(configuration.GetConnectionString("OrderingConnectionString")));
+        service.AddDbContext<ApplicationContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("OrderingConnectionString")));
 
         service.AddTransient<IOrderRepository, OrderRepository>();
 

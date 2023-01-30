@@ -10,7 +10,7 @@ namespace Ordering.Persistence
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)
         {
-            Database.EnsureCreated();
+            Database.EnsureCreated();   // создаем базу данных при первом обращении
         }
     }
 }
