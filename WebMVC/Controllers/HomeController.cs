@@ -1,21 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebMVC.Models;
+using WebMVC.Services;
 
 namespace WebMVC.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ICatalogService _catalogService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ICatalogService catalogService, ILogger<HomeController> logger)
         {
             _logger = logger;
+            _catalogService = catalogService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(_catalogService.GetCatalog());
         }
 
         public IActionResult Privacy()

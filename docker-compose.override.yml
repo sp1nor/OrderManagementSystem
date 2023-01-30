@@ -135,3 +135,13 @@ services:
       - "9000:9000"
     volumes:
       - portainer_data:/data
+
+  webmvc:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - "ApiSettings:GatewayAddress=http://ocelotapigw"
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+    ports:
+      - "80"
+      - "443"

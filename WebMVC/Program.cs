@@ -1,7 +1,16 @@
+using Common.Logging;
+using Serilog;
+using WebMVC.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//builder.Host.UseSerilog(SeriLogger.Configure);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddHttpClient<ICatalogService, CatalogService>(c =>
+    c.BaseAddress = new Uri(builder.Configuration["ApiSettings:GatewayAddress"]));
 
 var app = builder.Build();
 

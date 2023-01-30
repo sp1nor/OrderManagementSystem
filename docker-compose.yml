@@ -59,6 +59,12 @@ services:
   portainer:
     image: portainer/portainer-ce
 
+  webmvc:
+    image: ${DOCKER_REGISTRY-}webmvc
+    build:
+      context: .
+      dockerfile: WebMVC/Dockerfile
+
 volumes:
   postgres_data:
   mongo_data:
