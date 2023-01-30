@@ -1,5 +1,5 @@
 ﻿@using WebMVC.Model
-@model List<ProductModel>
+@model IEnumerable<ProductModel>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -12,6 +12,7 @@
 
 @foreach (var item in Model)
 {
-    <label class="control-label" asp-for="@item.Name"></label><br />
-    <label class="control-label" asp-for="@item.Price"></label><br />
+    <label class="control-label">@item.Name</label><br />
+    <label class="control-label">@item.Price</label><br />
+    <br />
 }

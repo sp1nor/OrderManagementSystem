@@ -139,7 +139,7 @@ services:
   webmvc:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80
+      #- ASPNETCORE_URLS=https://+:443;http://+:80
       - "ApiSettings:GatewayAddress=http://ocelotapigateway"
       - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     depends_on:
